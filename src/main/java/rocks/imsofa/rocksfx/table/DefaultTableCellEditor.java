@@ -222,6 +222,8 @@ public class DefaultTableCellEditor<S, T> extends TableCellEditor<S, T> {
                         pd.getWriteMethod().invoke(object, Double.valueOf("" + value));
                     } else if (propertyClass.equals(Float.class) || propertyClass.equals(float.class)) {
                         pd.getWriteMethod().invoke(object, Float.valueOf("" + value));
+                    } else if (propertyClass.equals(Date.class)) {
+                        pd.getWriteMethod().invoke(object, value);
                     }
 
                 }
